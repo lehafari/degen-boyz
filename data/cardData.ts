@@ -1,4 +1,4 @@
-interface CardData {
+export interface CardData {
   img: string;
   price: number;
 }

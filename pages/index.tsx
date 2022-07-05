@@ -1,8 +1,9 @@
-import { Container, Text } from "@nextui-org/react";
+import { Container, Grid, Text } from "@nextui-org/react";
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
+import { CardLayout } from "../components/card";
+
 import { MainLayout } from "../components/layouts";
+import { cards } from "../data";
 
 const Home: NextPage = () => {
   return (
@@ -37,6 +38,16 @@ const Home: NextPage = () => {
         >
           No house edge, with 100% RTP.
         </Text>
+
+        <Grid.Container gap={2} justify="flex-start">
+          {cards.map((card, i) => {
+            return (
+              <Grid key={i} xl={4} md={4} sm={6} xs={12}>
+                <CardLayout {...card} />
+              </Grid>
+            );
+          })}
+        </Grid.Container>
       </Container>
     </MainLayout>
   );

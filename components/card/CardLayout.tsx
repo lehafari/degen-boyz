@@ -1,7 +1,8 @@
 import { Button, Card, Col, Container, Row, Text } from "@nextui-org/react";
-import Image from "next/image";
+import { FC } from "react";
+import { CardData } from "../../data";
 
-export const CardLayout = () => {
+export const CardLayout: FC<CardData> = ({ img, price }) => {
   return (
     <Card
       css={{
@@ -10,7 +11,7 @@ export const CardLayout = () => {
     >
       <Card.Body css={{ pb: 0 }}>
         <Card.Image
-          src="https://lh3.googleusercontent.com/uept9XA4CUg4v2LsNPwMc-cTSuvRAfZx78e18GTL2Dr187-olLmdaHVmx2caJASpIep2J_jLTRiCJt60waMi0D1LfEyDtBEB4d_9nw=w600"
+          src={img}
           objectFit="cover"
           width="100%"
           height="100%"
@@ -51,7 +52,7 @@ export const CardLayout = () => {
               fontSize: "1.2rem",
             }}
           >
-            0.05
+            {price}
           </Text>
         </div>
         <div className="container-right">
