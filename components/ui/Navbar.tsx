@@ -8,7 +8,7 @@ export const Navbar = () => {
       style={{
         display: 'flex',
         width: '100%',
-        flexDirection: 'row',
+        flexWrap: 'wrap',
         alignItems: 'center',
         justifyContent: 'start',
         padding: '2rem 3rem',
@@ -29,21 +29,21 @@ export const Navbar = () => {
       <Spacer css={{ flex: 1 }} />
 
       <NextLink href="/favorites" passHref>
-        <Link css={{ marginRight: '10px' }}>
+        <Link css={{ marginRight: '1.3rem' }}>
           <Text size={14} color="white">
             HOW TO OPEN
           </Text>
         </Link>
       </NextLink>
       <NextLink href="/favorites" passHref>
-        <Link css={{ marginRight: '10px' }}>
+        <Link css={{ marginRight: '1.3rem' }}>
           <Text size={14} color="white">
             FAQS
           </Text>
         </Link>
       </NextLink>
       <NextLink href="/favorites" passHref>
-        <Link css={{ marginRight: '10px' }}>
+        <Link css={{ marginRight: '1.3rem' }}>
           <TwitterIcon
             sx={{
               color: 'white',
@@ -53,7 +53,7 @@ export const Navbar = () => {
         </Link>
       </NextLink>
       <NextLink href="/favorites" passHref>
-        <Link css={{ marginRight: '10px' }}>
+        <Link css={{ marginRight: '1.3rem' }}>
           <Button
             css={{
               padding: '1.5rem 1rem',
