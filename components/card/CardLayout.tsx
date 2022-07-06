@@ -1,12 +1,12 @@
-import { Button, Card, Col, Container, Row, Text } from "@nextui-org/react";
-import { FC } from "react";
-import { CardData } from "../../data";
+import { Button, Card, Col, Container, Row, Text } from '@nextui-org/react';
+import { FC } from 'react';
+import { CardData } from '../../data';
 
 export const CardLayout: FC<CardData> = ({ img, price }) => {
   return (
     <Card
       css={{
-        backgroundColor: "white",
+        backgroundColor: 'white',
       }}
     >
       <Card.Body css={{ pb: 0 }}>
@@ -21,23 +21,23 @@ export const CardLayout: FC<CardData> = ({ img, price }) => {
       <Card.Footer
         isBlurred
         css={{
-          bgBlur: "#364a6858",
-          width: "100%",
-          display: "flex",
-          justifyContent: "space-between",
+          bgBlur: '#364a6858',
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'space-between',
         }}
       >
         <div
           className="container-left"
           style={{
-            display: "flex",
-            alignItems: "center",
+            display: 'flex',
+            alignItems: 'center',
           }}
         >
           <div
             className="container-image"
             style={{
-              marginRight: "10px",
+              marginRight: '10px',
             }}
           >
             <Card.Image
@@ -49,7 +49,7 @@ export const CardLayout: FC<CardData> = ({ img, price }) => {
           {/*//*text-price  */}
           <Text
             css={{
-              fontSize: "1.2rem",
+              fontSize: '1.2rem',
             }}
           >
             {price}

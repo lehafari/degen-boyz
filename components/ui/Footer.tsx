@@ -1,6 +1,9 @@
 import NextLink from 'next/link';
-import { Container, Image, Link, Progress, Text } from '@nextui-org/react';
+import { Container, Link, Progress, Text } from '@nextui-org/react';
+import Image from 'next/image';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import logo from '../../public/img/logo.svg';
+import { Box } from '@mui/material';
 
 export const Footer = () => {
   return (
@@ -23,29 +26,29 @@ export const Footer = () => {
       </Container>
       <Container
         css={{
-          width: '90%',
+          width: '100%',
           display: 'flex',
-
           alignItems: 'center',
-          justifyContent: 'center',
+          justifyContent: 'space-evenly',
+          '@media (max-width: 768px)': {
+            flexDirection: 'column',
+          },
         }}
       >
-        <Image
-          src="https://res.cloudinary.com/dtgfpjvoi/lootbox/images/HeaderLogo.webp"
-          alt="Logo"
-          width={200}
-          height={60}
-        />
-        <Container
-          css={{
-            width: '30%',
+        <Image src={logo} alt="Logo" width={200} height={120} />
+        <Box
+          sx={{
+            width: '250px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             flexDirection: 'column',
+            '@media (max-width: 768px)': {
+              marginTop: '0.5rem',
+            },
           }}
         >
-          <NextLink href="/favorites" passHref>
+          <NextLink href="#" passHref>
             <Link css={{ marginBottom: '1.3rem' }}>
               <TwitterIcon
                 sx={{
@@ -58,7 +61,7 @@ export const Footer = () => {
           <Text size={16} color="white" span>
             © 2022 Degen Boyz
           </Text>
-        </Container>
+        </Box>
       </Container>
     </>
   );

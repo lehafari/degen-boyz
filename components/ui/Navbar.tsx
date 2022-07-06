@@ -1,6 +1,10 @@
 import NextLink from 'next/link';
-import { Spacer, Text, useTheme, Link, Image, Button } from '@nextui-org/react';
+import { Spacer, Text, useTheme, Link, Button } from '@nextui-org/react';
+
+import Image from 'next/image';
+
 import TwitterIcon from '@mui/icons-material/Twitter';
+import logo from '../../public/img/logo.svg';
 
 export const Navbar = () => {
   return (
@@ -17,32 +21,27 @@ export const Navbar = () => {
     >
       <NextLink href="/" passHref>
         <Link>
-          <Image
-            src="https://res.cloudinary.com/dtgfpjvoi/lootbox/images/HeaderLogo.webp"
-            alt="Logo"
-            width={200}
-            height={60}
-          />
+          <Image src={logo} alt="Logo" width={200} height={120} />
         </Link>
       </NextLink>
 
       <Spacer css={{ flex: 1 }} />
 
-      <NextLink href="/favorites" passHref>
+      <NextLink href="/how-to-open" passHref>
         <Link css={{ marginRight: '1.3rem' }}>
           <Text size={14} color="white">
             HOW TO OPEN
           </Text>
         </Link>
       </NextLink>
-      <NextLink href="/favorites" passHref>
+      <NextLink href="/faqs" passHref>
         <Link css={{ marginRight: '1.3rem' }}>
           <Text size={14} color="white">
             FAQS
           </Text>
         </Link>
       </NextLink>
-      <NextLink href="/favorites" passHref>
+      <NextLink href="#" passHref>
         <Link css={{ marginRight: '1.3rem' }}>
           <TwitterIcon
             sx={{
@@ -52,7 +51,7 @@ export const Navbar = () => {
           />
         </Link>
       </NextLink>
-      <NextLink href="/favorites" passHref>
+      <NextLink href="#" passHref>
         <Link css={{ marginRight: '1.3rem' }}>
           <Button
             css={{
