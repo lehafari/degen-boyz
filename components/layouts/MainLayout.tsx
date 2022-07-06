@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { FC } from 'react';
-import { Footer, Navbar } from '../ui';
+import Resize from '../../utils/resize';
+import { Footer, Navbar, NavbarMobile } from '../ui';
 
 interface Props {
   children: JSX.Element;
@@ -8,12 +9,16 @@ interface Props {
 }
 
 export const MainLayout: FC<Props> = ({ children, title }) => {
+  let size: number = Resize();
+
   return (
     <>
       <Head>
         <title>{title}</title>
       </Head>
-      <Navbar />
+      {size <= 900 ? <NavbarMobile /> : <Navbar />}
+      {/* <Navbar /> */}
+      {/* <NavbarMobile /> */}
       {children}
       <Footer />
     </>
