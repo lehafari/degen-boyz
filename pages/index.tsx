@@ -26,6 +26,7 @@ const Home: NextPage = () => {
           css={{
             textAlign: "center",
             fontSize: "4rem",
+            textGradient: "45deg, $blue600 -20%, $pink500 50%",
           }}
         >
           Open Degen Boyz Loot Boxes to win up to 100X in SOL
@@ -34,16 +35,18 @@ const Home: NextPage = () => {
           css={{
             fontSize: "1.2rem",
             marginTop: "2rem",
+            textGradient: "45deg, $blue600 -20%, $pink500 50%",
+            fontWeight: "600",
           }}
         >
           No house edge, with 100% RTP.
         </Text>
 
         <Grid.Container
-          gap={2}
+          gap={3}
           justify="flex-start"
           css={{
-            marginTop: "2rem",
+            marginTop: "1rem",
           }}
         >
           {cards.map((card, i) => {
