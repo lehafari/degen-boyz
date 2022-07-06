@@ -39,7 +39,13 @@ const Home: NextPage = () => {
           No house edge, with 100% RTP.
         </Text>
 
-        <Grid.Container gap={2} justify="flex-start">
+        <Grid.Container
+          gap={2}
+          justify="flex-start"
+          css={{
+            marginTop: "2rem",
+          }}
+        >
           {cards.map((card, i) => {
             return (
               <Grid key={i} xl={4} md={4} sm={6} xs={12}>
