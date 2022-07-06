@@ -1,11 +1,17 @@
 import { Container, Grid, Text } from '@nextui-org/react';
 import type { NextPage } from 'next';
+import Image from 'next/image';
+import { useState } from 'react';
 import { CardLayout } from '../components/card';
 
 import { MainLayout } from '../components/layouts';
+import { OpenBox } from '../components/popup/openbox.popup';
 import { cards } from '../data';
 
 const Home: NextPage = () => {
+  const [visible, setVisible] = useState(false);
+  // const handler = () => setVisible(true);
+
   return (
     <MainLayout title="Home">
       <Container
@@ -57,6 +63,7 @@ const Home: NextPage = () => {
             );
           })}
         </Grid.Container>
+        <OpenBox visible={visible} setVisible={setVisible} />
       </Container>
     </MainLayout>
   );
