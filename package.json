@@ -22,8 +22,11 @@
     "@solana/wallet-adapter-wallets": "^0.16.6",
     "@solana/web3.js": "^1.47.3",
     "next": "12.2.0",
+    "primeicons": "^5.0.0",
+    "primereact": "^8.2.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@types/node": "18.0.1",
