@@ -4,6 +4,8 @@ import { Text, Link, Button, Container } from '@nextui-org/react';
 import { Sidebar } from 'primereact/sidebar';
 import MenuIcon from '@mui/icons-material/Menu';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import { Box } from '@mui/material';
+import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 
 export const MenuMobile = () => {
   const [visible, setVisible] = useState(false);
@@ -49,26 +51,17 @@ export const MenuMobile = () => {
               />
             </Link>
           </NextLink>
-          <NextLink href="#" passHref>
-            <Link css={{ margin: '1.3rem 0rem' }}>
-              <Button
-                css={{
-                  padding: '1.5rem 1rem',
-                  fontFamily: 'Roboto',
-                  borderRadius: '5px',
-                }}
-                color="gradient"
-              >
-                <Text
-                  css={{
-                    fontWeight: '600',
-                  }}
-                >
-                  SELECT WALLET
-                </Text>
-              </Button>
-            </Link>
-          </NextLink>
+          <Box
+            sx={{
+              marginTop: '2rem',
+              '& > button': {
+                background:
+                  'linear-gradient(112deg, #06b7db -63.59%, #ff4ecd -20.3%, #0072f5 70.46%)',
+              },
+            }}
+          >
+            <WalletMultiButton className="btn btn-ghost" />
+          </Box>
         </Container>
       </Sidebar>
     </>

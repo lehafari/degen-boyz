@@ -1,4 +1,5 @@
 import { Container, Grid, Text } from '@nextui-org/react';
+import { useWallet } from '@solana/wallet-adapter-react';
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -10,7 +11,6 @@ import { cards } from '../data';
 
 const Home: NextPage = () => {
   const [visible, setVisible] = useState(false);
-  // const handler = () => setVisible(true);
 
   return (
     <MainLayout title="Home">

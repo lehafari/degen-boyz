@@ -1,5 +1,12 @@
 import NextLink from 'next/link';
-import { Spacer, Text, useTheme, Link, Button } from '@nextui-org/react';
+import {
+  Spacer,
+  Text,
+  useTheme,
+  Link,
+  Button,
+  Container,
+} from '@nextui-org/react';
 
 import Image from 'next/image';
 
@@ -8,9 +15,12 @@ import logo from '../../public/img/logo.svg';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { FC } from 'react';
+import { Box } from '@mui/material';
 
 export const Navbar: FC = () => {
   const { publicKey } = useWallet();
+  const wallet = useWallet();
+  console.log(wallet);
   console.log(publicKey);
   console.log(publicKey?.toBase58());
 
@@ -58,29 +68,16 @@ export const Navbar: FC = () => {
           />
         </Link>
       </NextLink>
-      <NextLink href="#" passHref>
-        <Link css={{ marginRight: '1.3rem' }}>
-          <Button
-            css={{
-              width: 'fit-content',
-
-              fontFamily: 'Roboto',
-              borderRadius: '5px',
-              '&:hover': {
-                backgroundColor: '#1a1f2e !important',
-              },
-            }}
-            color="gradient"
-          >
-            <WalletMultiButton
-              style={{
-                width: '100%',
-              }}
-              className="btn btn-ghost"
-            />
-          </Button>
-        </Link>
-      </NextLink>
+      <Box
+        sx={{
+          '& > button': {
+            background:
+              'linear-gradient(112deg, #06b7db -63.59%, #ff4ecd -20.3%, #0072f5 70.46%)',
+          },
+        }}
+      >
+        <WalletMultiButton />
+      </Box>
     </div>
   );
 };
