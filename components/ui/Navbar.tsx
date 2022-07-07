@@ -5,8 +5,15 @@ import Image from 'next/image';
 
 import TwitterIcon from '@mui/icons-material/Twitter';
 import logo from '../../public/img/logo.svg';
+import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
+import { useWallet } from '@solana/wallet-adapter-react';
+import { FC } from 'react';
 
-export const Navbar = () => {
+export const Navbar: FC = () => {
+  const { publicKey } = useWallet();
+  console.log(publicKey);
+  console.log(publicKey?.toBase58());
+
   return (
     <div
       style={{
@@ -55,19 +62,22 @@ export const Navbar = () => {
         <Link css={{ marginRight: '1.3rem' }}>
           <Button
             css={{
-              padding: '1.5rem 1rem',
+              width: 'fit-content',
+
               fontFamily: 'Roboto',
               borderRadius: '5px',
+              '&:hover': {
+                backgroundColor: '#1a1f2e !important',
+              },
             }}
             color="gradient"
           >
-            <Text
-              css={{
-                fontWeight: '600',
+            <WalletMultiButton
+              style={{
+                width: '100%',
               }}
-            >
-              SELECT WALLET
-            </Text>
+              className="btn btn-ghost"
+            />
           </Button>
         </Link>
       </NextLink>
